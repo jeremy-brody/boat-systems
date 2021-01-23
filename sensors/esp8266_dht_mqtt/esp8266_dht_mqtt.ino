@@ -10,6 +10,7 @@ const char* password = "pv2ohf2j1[pjgrf";
 const char* mqtt_server = "192.168.7.100";
 const char* mqtt_topic_temperature = "home/livingroom/temperature";
 const char* mqtt_topic_humidity = "home/livingroom/humidity";
+const String description = "Living Room";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -73,14 +74,15 @@ void publish() {
 }
 
 char* buildMessage(String sensor, long epochTime, String unit, float value) {
-      StaticJsonDocument<128> doc;
+      StaticJsonDocument<256> doc;
 
       doc["sensor"] = sensor;
       doc["time"] = epochTime;
       doc["unit"] = unit;
       doc["value"] = value;
+      doc["description"] = description;
       
-      char output[128];
+      char output[256];
       serializeJson(doc, output);
 
       Serial.println(output);
