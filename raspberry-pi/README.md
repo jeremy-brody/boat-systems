@@ -11,7 +11,8 @@
 
 1. Image micro sd card with Rasperian Lite. Raspberry Pi Imager application is by far the easiest way: https://www.raspberrypi.org/software/
     - If using Imager: Choose OS -> Rasperry Pi OS (Other) -> Rasperry Pi OS Lite
-1. copy `wpa_supplicant.conf` to /Volumes/boot (mac location) after imaging. this may require re-mounting if Imager ejected.
+1. Imager ejects the card. either remount of pull out and plug back in
+1. `cp wpa_supplicant.conf /Volumes/boot/` (mac location)
 1. update `SSID` and `PASSWORD` in wpa_supplicant.conf    
 1. `touch /Volumes/boot/ssh` (mac location) - enables ssh access
 1. eject, put card into pi, and power up
