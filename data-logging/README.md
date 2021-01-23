@@ -1,4 +1,4 @@
-# Data Logging and Visualization
+# Data Logging
 
 ## Prereq.
 
@@ -36,13 +36,4 @@ connector between mqtt server and influxdb
             --restart always \
             telegraf
 
-### Grafana
-data visualization
-
-        docker run \
-            --name grafana \
-            --detach \
-            --publish 3000:3000 \
-            --restart always \
-            grafana/grafana
 
