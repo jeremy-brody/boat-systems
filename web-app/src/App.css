@@ -29,7 +29,7 @@ body {
     left: 2vh;
     width: auto;
     height: auto;
-    font-size: min(16vw, 16vh);
+    font-size: 16vmin;
     text-align: left;
   }
   
@@ -39,7 +39,7 @@ body {
     right: 2vh;
     width: auto;
     height: auto;
-    font-size: min(16vw, 16vh);
+    font-size: 16vmin;
     text-align: right;
   }
   
@@ -48,15 +48,21 @@ body {
     top: max(24vh, 10vw);
     left: 0;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     height: auto;
   }
-  
+
+  .tile-value-text {
+    font-size: 22vmin;
+    line-height: 50vmin;
+    vertical-align: top;
+  }
+
   .tile-value-big {
-    font-size: min(50vh, 50vw);
+    font-size: 50vmin;
   }
   
   .tile-value-small {
-    font-size: min(30vh, 30vw);
+    font-size: 30vmin;
   }
   

@@ -8,6 +8,7 @@ function App() {
       <Swiper> 
         <SwiperSlide><MqttTile mqttTopic={'home/livingroom/temperature'} /></SwiperSlide>
         <SwiperSlide><MqttTile mqttTopic={'home/livingroom/humidity'} /></SwiperSlide>
+        <SwiperSlide><MqttTile mqttTopic={'boat/battery/house'} /></SwiperSlide>
       </Swiper>
     </div>
   );
