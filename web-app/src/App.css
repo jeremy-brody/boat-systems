@@ -2,19 +2,18 @@
     display: relative;
     width: 100%;
     height: 100%;
+    background-color: #000000;
   }
-  
-  .hide {
-    display: none;
+
+  .swiper-container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
   }
-  
+
   .tile {
     /* background-color: #282c34; */
-    background-color: #000000;
-    min-height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     color: white;
     overflow: hidden;
     width: 100%;
@@ -27,7 +26,7 @@
     left: 2vh;
     width: auto;
     height: auto;
-    font-size: 6em;
+    font-size: min(16vw, 16vh);
     text-align: left;
   }
   
@@ -37,13 +36,13 @@
     right: 2vh;
     width: auto;
     height: auto;
-    font-size: 6em;
+    font-size: min(16vw, 16vh);
     text-align: right;
   }
   
   .tile-value {
     position: absolute;
-    top: 24vh;
+    top: max(24vh, 24vw);
     left: 0;
     text-align: center;
     width: 100%;
@@ -51,10 +50,10 @@
   }
   
   .tile-value-big {
-    font-size: 50vh;
+    font-size: min(50vh, 50vw);
   }
   
   .tile-value-small {
-    font-size: 30vh;
+    font-size: min(30vh, 30vw);
   }
   
