@@ -9,6 +9,7 @@ function MqttTile({ mqttTopic }) {
     const [textValue, setTextValue] = useState('');
     const [bigValue, setBigValue] = useState(placeholder);
     const [littleValue, setLittleValue] = useState('');
+    const [description, setDescription] = useState(placeholder);
 
     useEffect(() => {
         const client = mqtt.connect("mqtt://192.168.7.100:9001");
@@ -16,7 +17,7 @@ function MqttTile({ mqttTopic }) {
         client.on('message', (topic, payload, packet) => {
             console.log(payload.toString())
             let message = JSON.parse(payload.toString('utf-8'))
-            let name = message.sensor.charAt(0).toUpperCase() + message.sensor.substr(1).toLowerCase();
+            let name = message.sensor;
             if (name.length > 8) name = name.substr(0,4);
             setName(name);
             setMeta(message.unit);
@@ -36,6 +37,7 @@ function MqttTile({ mqttTopic }) {
                 setBigValue(Math.trunc(message.value));
                 setLittleValue('.' + (message.value % 1).toFixed(1).split('.')[1]);
             }
+            setDescription(message.description);
         });
     }, []);
     
@@ -48,6 +50,7 @@ function MqttTile({ mqttTopic }) {
                 <span className="tile-value-big">{bigValue}</span>
                 <span className="tile-value-small">{littleValue}</span>
             </div>
+            <div className="tile-description">{description}</div>
         </div>
     )
 

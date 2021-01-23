@@ -9,8 +9,8 @@ const char* ssid = "Chewbacca";
 const char* password = "pv2ohf2j1[pjgrf";
 const char* mqtt_server = "192.168.7.100";
 const char* mqtt_topic = "boat/battery/house";
-const String description = "House Battery";
-const String sensor_type = "battery";
+const String description = "House";
+const String sensor_type = "Battery";
 
 WiFiClient espClient;
 PubSubClient client(espClient);

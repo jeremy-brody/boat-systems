@@ -10,6 +10,8 @@ const char* password = "pv2ohf2j1[pjgrf";
 const char* mqtt_server = "192.168.7.100";
 const char* mqtt_topic_temperature = "home/livingroom/temperature";
 const char* mqtt_topic_humidity = "home/livingroom/humidity";
+const String sensor_type_humidity = "Humidity";
+const String sensor_type_temperature = "Temperature";
 const String description = "Living Room";
 
 WiFiClient espClient;
@@ -69,8 +71,8 @@ void publish() {
       long epochTime = timeClient.getEpochTime();
       float humidity = dht.readHumidity();
       float temperature = dht.readTemperature(true); // true == farenheit
-      client.publish(mqtt_topic_temperature, buildMessage("temperature", epochTime, "F", temperature));
-      client.publish(mqtt_topic_humidity, buildMessage("humidity", epochTime, "%", humidity));
+      client.publish(mqtt_topic_temperature, buildMessage(sensor_type_temperature, epochTime, "F", temperature));
+      client.publish(mqtt_topic_humidity, buildMessage(sensor_type_humidity, epochTime, "%", humidity));
 }
 
 char* buildMessage(String sensor, long epochTime, String unit, float value) {
