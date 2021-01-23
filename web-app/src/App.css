@@ -1,8 +1,11 @@
+body {
+  background-color: #000000;
+}
+
 .App {
     display: relative;
     width: 100%;
     height: 100%;
-    background-color: #000000;
   }
 
   .swiper-container {
@@ -42,7 +45,7 @@
   
   .tile-value {
     position: absolute;
-    top: max(24vh, 24vw);
+    top: max(24vh, 10vw);
     left: 0;
     text-align: center;
     width: 100%;
