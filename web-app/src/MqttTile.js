@@ -16,7 +16,13 @@ function MqttTile({ mqttTopic }) {
         client.subscribe(topic);
         client.on('message', (topic, payload, packet) => {
             console.log(payload.toString())
-            let message = JSON.parse(payload.toString('utf-8'))
+            let message;
+            try {
+                message = JSON.parse(payload.toString('utf-8'))
+            } catch (e) {
+                // occasionally, a sensor sends an incomplete json string
+                return;
+            }
             let name = message.sensor;
             if (name.length > 8) name = name.substr(0,4);
             setName(name);
