@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-function formatTime(date) {
+function formatTime(dateString) {
+    const date = new Date(dateString.replace(/\s/g, 'T'));
     return date
             .toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
             .toLowerCase()
@@ -8,17 +9,14 @@ function formatTime(date) {
 }
 
 function predictionList(predictions) {
-    let now = new Date();
-    let nowItem = (<li className='dark' key={now.toString()}>{formatTime(now)}</li>);
     const listItems = predictions.map(p => {
-        const date = new Date(p.t.replace(/\s/g, 'T'));
         let tide = Math.round(p.v * 10) / 10;
         tide = tide > 0 ? "+" + tide : tide;
         tide = tide + "ft";
         const type = p.type == 'H' ? '↑' : '↓';
-        return (<li key={date.toString()}>{formatTime(date)} {tide} {type}</li>);
+        return (<li key={p.t}>{formatTime(p.t)} {tide} {type}</li>);
     });
-    return <ul>{nowItem}{listItems}</ul>;
+    return <ul>{listItems}</ul>;
 }
 
 function TideTile() {

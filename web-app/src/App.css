@@ -83,10 +83,21 @@ body {
     text-align: left;
     color: #282c34;
   }
+
+  .tile-raw-value {
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+    width: auto;
+    height: auto;
+    font-size: 15vmin;
+    text-align: left;
+    color: #282c34;
+  }
   
   .tile-tide {
     position: absolute;
-    top: 24vh;
+    top: 28vh;
     left: 0;
     width: 100vw;
     height: auto;

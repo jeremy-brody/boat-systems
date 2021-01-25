@@ -10,6 +10,7 @@ function MqttTile({ mqttTopic }) {
     const [bigValue, setBigValue] = useState(placeholder);
     const [littleValue, setLittleValue] = useState('');
     const [description, setDescription] = useState(placeholder);
+    const [rawValue, setRawValue] = useState('');
 
     useEffect(() => {
         const client = mqtt.connect("mqtt://192.168.7.100:9001");
@@ -44,6 +45,9 @@ function MqttTile({ mqttTopic }) {
                 setLittleValue('.' + (message.value % 1).toFixed(1).split('.')[1]);
             }
             setDescription(message.description);
+            if (message.hasOwnProperty('rawValue') && !isNaN(message.rawValue)) {
+                setRawValue(Math.round(message.rawValue * 10) / 10);
+            } 
         });
     }, []);
     
@@ -57,6 +61,7 @@ function MqttTile({ mqttTopic }) {
                 <span className="tile-value-small">{littleValue}</span>
             </div>
             <div className="tile-description">{description}</div>
+            <div className="tile-raw-value">{rawValue}</div>
         </div>
     )
 
