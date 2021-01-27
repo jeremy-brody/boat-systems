@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## run on nginx
+
+    sudo mkdir -p /usr/share/nginx/html
+    sudo chown pi /usr/share/nginx/html
+
+    scp -r build/* pi@192.168.7.79:/usr/share/nginx/html
+
+    docker run \
+        --name nginx \
+        --detach \
+        --publish 80:80 \
+        --volume  /usr/share/nginx/html:/usr/share/nginx/html:ro \
+        --restart always \
+        nginx

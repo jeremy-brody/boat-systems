@@ -1,3 +1,4 @@
+import Tile from './Tile';
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
@@ -139,16 +140,12 @@ function TideChartTile() {
         // )
         // setData(dataTemp);
     }, [])
-    
+
     return (
-        <div className="tile">
-            <div className="tile-name">{name}</div>
-            <div className="tile-meta">{meta}</div>
-            <div className="tile-data">
-                <Line data={data} options={options} />
-            </div>
-            <div className="tile-description">{description}</div>
-        </div>
+        <Tile name={name} 
+            meta={meta} 
+            value={<Line data={data} options={options} />} 
+            description={description} />
     )
 
 }

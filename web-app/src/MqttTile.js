@@ -1,7 +1,8 @@
+import Tile from './Tile';
 import React, { useState, useEffect } from 'react';
 import mqtt from 'mqtt';
 
-function MqttTile({ mqttTopic }) {
+function MqttTile({ mqttAddress, mqttTopic }) {
     const placeholder = '--';
     const [topic, setTopic] = useState(mqttTopic);
     const [name, setName] = useState(placeholder);
@@ -10,10 +11,10 @@ function MqttTile({ mqttTopic }) {
     const [bigValue, setBigValue] = useState(placeholder);
     const [littleValue, setLittleValue] = useState('');
     const [description, setDescription] = useState(placeholder);
-    const [rawValue, setRawValue] = useState('');
+    const [secondValue, setSecondValue] = useState('');
 
     useEffect(() => {
-        const client = mqtt.connect("mqtt://192.168.7.100:9001");
+        const client = mqtt.connect(mqttAddress);
         client.subscribe(topic);
         client.on('message', (topic, payload, packet) => {
             console.log(payload.toString())
@@ -46,23 +47,24 @@ function MqttTile({ mqttTopic }) {
             }
             setDescription(message.description);
             if (message.hasOwnProperty('rawValue') && !isNaN(message.rawValue)) {
-                setRawValue(Math.round(message.rawValue * 10) / 10);
+                setSecondValue(Math.round(message.rawValue * 10) / 10);
             } 
         });
     }, []);
+
+    const Value = () => 
+        <div>
+            <span className="tile-value-text">{textValue}</span>
+            <span className="tile-value-big">{bigValue}</span>
+            <span className="tile-value-small">{littleValue}</span>
+        </div>
     
     return (
-        <div className="tile">
-            <div className="tile-name">{name}</div>
-            <div className="tile-meta">{meta}</div>
-            <div className="tile-value">
-                <span className="tile-value-text">{textValue}</span>
-                <span className="tile-value-big">{bigValue}</span>
-                <span className="tile-value-small">{littleValue}</span>
-            </div>
-            <div className="tile-description">{description}</div>
-            <div className="tile-raw-value">{rawValue}</div>
-        </div>
+        <Tile name={name} 
+            meta={meta} 
+            value={<Value />} 
+            description={description}
+            secondValue={secondValue} />
     )
 
 }

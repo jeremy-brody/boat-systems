@@ -1,3 +1,4 @@
+import Tile from './Tile';
 import React, { useState, useEffect } from 'react';
 
 function reload() {
@@ -6,14 +7,12 @@ function reload() {
 
 function ReloadTile() {
     
+    const Value = () => 
+        <span onClick={reload} className="tile-value-text">Go</span>
+
     return (
-        <div className="tile">
-            <div className="tile-name">Reload</div>
-            <div className="tile-value">
-                <span onClick={reload} className="tile-value-text">Go</span>
-            </div>
-            <div className="tile-description">From server</div>
-        </div>
+        <Tile name={'Reload'} 
+            value={<Value />} />
     )
 
 }

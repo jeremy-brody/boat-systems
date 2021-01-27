@@ -1,3 +1,4 @@
+import Tile from './Tile';
 import React, { useState, useEffect } from 'react';
 
 function formatTime(dateString) {
@@ -43,13 +44,15 @@ function TideTile() {
       )
     }, [])
     
+    const Value = () =>
+        <div className="tile-tide">{predictions}</div>
+
+    
     return (
-        <div className="tile">
-            <div className="tile-name">{name}</div>
-            <div className="tile-meta">{meta}</div>
-            <div className="tile-tide">{predictions}</div>
-            <div className="tile-description">{description}</div>
-        </div>
+        <Tile name={name} 
+            meta={meta} 
+            value={<Value />} 
+            description={description} />
     )
 
 }

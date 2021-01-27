@@ -1,32 +1,12 @@
-body {
-  background-color: #000000;
-}
-
-.dark {
-  color: #282c34;
-}
-
-.App {
-    display: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .swiper-container {
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-  }
-
-  /* .tile {
+  .tile {
     position: relative;
     color: white;
     overflow: hidden;
     width: 100vw;
     height: min(100vh, 200vw);
-  } */
+  }
   
-  /* .tile-name {
+  .tile-name {
     position: absolute;
     top: 2vh;
     left: 2vh;
@@ -34,9 +14,9 @@ body {
     height: auto;
     font-size: 15vmin;
     text-align: left;
-  } */
+  }
   
-  /* .tile-meta {
+  .tile-meta {
     position: absolute;
     top: 2vh;
     right: 2vh;
@@ -45,32 +25,32 @@ body {
     font-size: 15vmin;
     text-align: right;
     color: #282c34;
-  } */
+  }
   
-  /* .tile-value {
+  .tile-value {
     position: absolute;
     top: max(22vh, 10vw);
     left: 0;
     text-align: center;
     width: 100vw;
     height: auto;
-  } */
+  }
 
-  /* .tile-value-text {
+  .tile-value-text {
     font-size: 22vmin;
     line-height: 52vmin;
     vertical-align: top;
-  } */
+  }
 
-  /* .tile-value-big {
+  .tile-value-big {
     font-size: 50vmin;
-  } */
+  }
   
-  /* .tile-value-small {
+  .tile-value-small {
     font-size: 30vmin;
-  } */
+  }
 
-  /* .tile-description {
+  .tile-description {
     position: absolute;
     bottom: 2vh;
     left: 2vh;
@@ -79,9 +59,9 @@ body {
     font-size: 15vmin;
     text-align: left;
     color: #282c34;
-  } */
+  }
 
-  /* .tile-raw-value {
+  .tile-raw-value {
     position: absolute;
     bottom: 2vh;
     right: 2vh;
@@ -90,30 +70,29 @@ body {
     font-size: 15vmin;
     text-align: left;
     color: #282c34;
-  } */
+  }
 
-  /* .tile-data {
+  .tile-data {
     position: absolute;
-    top: 28vh;
+    top: 28%;
     left: 0;
-    width: 100vw;
-    height: 50vh;
-    font-size: 9vmin;
+    width: 100%;
+    height: 50%;
+    font-size: 9%;
     text-align: center;
-  } */
+  }
 
-  /* .tile-tide {
+  .tile-tide {
     position: absolute;
-    top: 28vh;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: auto;
     font-size: 9vmin;
     text-align: center;
-  } */
+  }
 
-  /* .tile-tide ul {
+  .tile-tide ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  } */
+  }
