@@ -1,0 +1,29 @@
+.two-value-tile .tile-value-1 {
+  position: absolute;
+  left: 2vw;
+  top: 10vh;
+  font-size: 60vmin;
+  height: auto;
+  width: auto;
+  line-height: 28vmin;
+  margin: 0;
+  padding: 0;
+}
+
+.two-value-tile .tile-value-1-unit {
+  font-size: 30vmin;
+}
+
+.two-value-tile .tile-value-2 {
+  position: absolute;
+  right: 4vw;
+  bottom: 20vh;
+  font-size: 28vmin;
+  height: auto;
+  width: auto;
+  line-height: 15vmin;
+}
+
+.two-value-tile .tile-value-2-unit {
+  font-size: 13vmin;
+}
