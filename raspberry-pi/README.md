@@ -32,3 +32,8 @@
 1. `sudo apt-get install xserver-xorg x11-xserver-utils xinit openbox`
 1. `sudo apt-get install chromium-browser`
 1. ... fill out remaining steps here in case site goes away
+
+### Change Kiosk url
+1. `sudo vim /etc/xdg/openbox/environment`
+1. update `KIOSK_URL`, save
+1. `sudo reboot`
