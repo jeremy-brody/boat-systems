@@ -7,12 +7,17 @@
 
 const char* ssid = "Chewbacca";
 const char* password = "pv2ohf2j1[pjgrf";
-const char* mqtt_server = "192.168.7.100";
-const char* mqtt_topic_temperature = "home/livingroom/temperature";
-const char* mqtt_topic_humidity = "home/livingroom/humidity";
+const char* mqtt_server = "192.168.7.79";
+//const String clientId = "ESP8266-001";
+//const String description = "Living Room";
+//const char* mqtt_topic_temperature = "home/livingroom/temperature";
+//const char* mqtt_topic_humidity = "home/livingroom/humidity";
+const String clientId = "ESP8266-002";
+const String description = "Basement";
+const char* mqtt_topic_temperature = "home/basement/temperature";
+const char* mqtt_topic_humidity = "home/basement/humidity";
 const String sensor_type_humidity = "Humidity";
 const String sensor_type_temperature = "Temperature";
-const String description = "Living Room";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -51,7 +56,6 @@ void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
-    String clientId = "ESP8266-001";
     // Attempt to connect
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
