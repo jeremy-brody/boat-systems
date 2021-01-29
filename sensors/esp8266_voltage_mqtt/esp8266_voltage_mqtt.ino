@@ -4,10 +4,10 @@
 #include <WiFiUdp.h>
 #include <NTPClient.h>
 
-const String client_id = "ESP8266-002";
+const String client_id = "ESP8266-003";
 const char* ssid = "Chewbacca";
 const char* password = "pv2ohf2j1[pjgrf";
-const char* mqtt_server = "192.168.7.100";
+const char* mqtt_server = "192.168.7.79";
 const char* mqtt_topic = "boat/battery/house";
 const String description = "House";
 const String sensor_type = "Battery";
