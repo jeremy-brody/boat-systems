@@ -15,6 +15,7 @@
 1. `cp wpa_supplicant.conf /Volumes/boot/` (mac location)
 1. update `SSID` and `PASSWORD` in wpa_supplicant.conf    
 1. `touch /Volumes/boot/ssh` (mac location) - enables ssh access
+1. `echo "USER:$(echo 'PASSWORD' | openssl passwd -6 -stdin)" >> /Volumes/boot/userconf` to add ssh user and encrypted pw
 1. eject, put card into pi, and power up
 1. ssh in `ssh pi@IP_ADDRESS_OF_PI` obviously update the ip address that was assigned to the pi. the defauly password is `raspberry`. change it.
 
